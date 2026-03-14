@@ -26,7 +26,6 @@ CREATE TABLE gold.dim_time (
     alert_day DATE
 );
 
-drop TABLE gold.fact_alerts;
 CREATE TABLE gold.fact_alerts (
 
     alert_id TEXT PRIMARY KEY,
