@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-03-14T11:55:56.277961+00:00",
+  "overview": {
+    "total_incidents": 885,
+    "total_devices": 108,
+    "total_alerts": 1348,
+    "avg_reliability_score": 88.19534482758621
+  },
+  "top_failing_devices": [
+    {
+      "device": "AmesUtility",
+      "organization": "Wyffels",
+      "total_alerts": 93,
+      "critical_alerts": 22,
+      "incidents_count": 71,
+      "reliability_score": 19.6,
+      "anomaly_score": -0.2541388946034958,
+      "is_anomalous": 1
+    },
+    {
+      "device": "LBTAMAG01",
+      "organization": "Ocean Point Terminals (LTB)",
+      "total_alerts": 41,
+      "critical_alerts": 41,
+      "incidents_count": 38,
+      "reliability_score": 40.76,
+      "anomaly_score": -0.15321633890077124,
+      "is_anomalous": 1
+    },
+    {
+      "device": "GlacierVmProd2",
+      "organization": "Ambient Enterprises > Ambient Enterprises HCN (HAR)",
+      "total_alerts": 38,
+      "critical_alerts": 18,
+      "incidents_count": 36,
+      "reliability_score": 58.87,
+      "anomaly_score": -0.0914309065982657,
+      "is_anomalous": 1
+    },
+    {
+      "device": "HOVDC005",
+      "organization": "Ocean Point Terminals (LTB)",
+      "total_alerts": 36,
+      "critical_alerts": 36,
+      "incidents_count": 35,
+      "reliability_score": 47.52,
+      "anomaly_score": -0.11162469179627688,
+      "is_anomalous": 1
+    },
+    {
+      "device": "NJ-EX01",
+      "organization": "Wedgewood Pharmacy",
+      "total_alerts": 33,
+      "critical_alerts": 33,
+      "incidents_count": 32,
+      "reliability_score": 51.92,
+      "anomaly_score": -0.07727188610018743,
+      "is_anomalous": 1
+    }
+  ],
+  "most_frequent_alert_types": [
+    {
+      "alert_type": "VPN remote gateway is Lost",
+      "total_count": 207,
+      "devices_affected": 6,
+      "avg_severity": 4.0
+    },
+    {
+      "alert_type": "Network Element Offline",
+      "total_count": 123,
+      "devices_affected": 9,
+      "avg_severity": 1.0
+    },
+    {
+      "alert_type": "Port failure",
+      "total_count": 96,
+      "devices_affected": 14,
+      "avg_severity": 1.0
+    },
+    {
+      "alert_type": "High traffic",
+      "total_count": 94,
+      "devices_affected": 19,
+      "avg_severity": 3.9680851063829787
+    },
+    {
+      "alert_type": "High latency",
+      "total_count": 91,
+      "devices_affected": 20,
+      "avg_severity": 4.0
+    }
+  ],
+  "recent_incidents": [
+    {
+      "incident_id": "INC-000885",
+      "device": "srv-88.hanson.com",
+      "organization": "Haynes, Butler and Rich",
+      "alert_count": 1,
+      "severity_score": 4.0,
+      "start_time": "2026-03-14 09:07:34.783495+00:00",
+      "end_time": "2026-03-14 09:07:34.783495+00:00",
+      "duration_minutes": 0.0,
+      "root_cause_candidate": "High traffic",
+      "incident_type": "other"
+    },
+    {
+      "incident_id": "INC-000884",
+      "device": "email-76.rivera-espinoza.com",
+      "organization": "Maldonado, Wilson and Nichols",
+      "alert_count": 1,
+      "severity_score": 1.0,
+      "start_time": "2026-03-14 09:07:34.781485+00:00",
+      "end_time": "2026-03-14 09:07:34.781485+00:00",
+      "duration_minutes": 0.0,
+      "root_cause_candidate": "VPN connectivity changed",
+      "incident_type": "other"
+    },
+    {
+      "incident_id": "INC-000883",
+      "device": "srv-75.roberson.com",
+      "organization": "Heath, Rivera and Guzman",
+      "alert_count": 1,
+      "severity_score": 4.0,
+      "start_time": "2026-03-14 09:07:34.778467+00:00",
+      "end_time": "2026-03-14 09:07:34.778467+00:00",
+      "duration_minutes": 0.0,
+      "root_cause_candidate": "High traffic",
+      "incident_type": "availability"
+    },
+    {
+      "incident_id": "INC-000882",
+      "device": "lt-48.johnson.com",
+      "organization": "Tran, Hall and West",
+      "alert_count": 1,
+      "severity_score": 4.0,
+      "start_time": "2026-03-14 09:07:34.775463+00:00",
+      "end_time": "2026-03-14 09:07:34.775463+00:00",
+      "duration_minutes": 0.0,
+      "root_cause_candidate": "High traffic",
+      "incident_type": "other"
+    },
+    {
+      "incident_id": "INC-000881",
+      "device": "laptop-64.hickman.com",
+      "organization": "Wells, Sanchez and Shepherd",
+      "alert_count": 1,
+      "severity_score": 1.0,
+      "start_time": "2026-03-14 09:07:34.771470+00:00",
+      "end_time": "2026-03-14 09:07:34.771470+00:00",
+      "duration_minutes": 0.0,
+      "root_cause_candidate": "High traffic",
+      "incident_type": "other"
+    }
+  ],
+  "timeline_snapshot": [
+    {
+      "timestamp": "2025-11-25 19:20:00+00:00",
+      "alerts_count": 18,
+      "incidents_count": 7,
+      "critical_incidents": 4
+    },
+    {
+      "timestamp": "2025-11-25 19:25:00+00:00",
+      "alerts_count": 3,
+      "incidents_count": 3,
+      "critical_incidents": 2
+    },
+    {
+      "timestamp": "2025-11-25 19:30:00+00:00",
+      "alerts_count": 1,
+      "incidents_count": 1,
+      "critical_incidents": 0
+    },
+    {
+      "timestamp": "2025-11-26 16:55:00+00:00",
+      "alerts_count": 5,
+      "incidents_count": 2,
+      "critical_incidents": 0
+    },
+    {
+      "timestamp": "2026-03-14 09:05:00+00:00",
+      "alerts_count": 7,
+      "incidents_count": 7,
+      "critical_incidents": 5
+    }
+  ]
+}
