@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-14T11:55:56.277961+00:00",
+  "generated_at": "2026-03-14T13:50:07.878685+00:00",
   "overview": {
     "total_incidents": 885,
     "total_devices": 108,
@@ -90,6 +90,50 @@
       "avg_severity": 4.0
     }
   ],
+  "top_incident_causes": [
+    {
+      "incident_cause": "The VPN remote gateway 12.207.114.35 has been lost\r\n\r\nBegin Crisis Management\r\nWarm Hand-off to IS - Networking team",
+      "count": 49
+    },
+    {
+      "incident_cause": "Device Online Status is now equal to Online",
+      "count": 45
+    },
+    {
+      "incident_cause": "The VPN remote gateway 12.207.114.41 has been lost\r\n\r\nBegin Crisis Management\r\nWarm Hand-off to IS - Networking team",
+      "count": 43
+    },
+    {
+      "incident_cause": "Port failure",
+      "count": 35
+    },
+    {
+      "incident_cause": "High latency",
+      "count": 33
+    }
+  ],
+  "top_alert_causes": [
+    {
+      "alert_cause": "Port failure",
+      "count": 100
+    },
+    {
+      "alert_cause": "High latency",
+      "count": 91
+    },
+    {
+      "alert_cause": "High traffic",
+      "count": 88
+    },
+    {
+      "alert_cause": "VPN connectivity changed",
+      "count": 84
+    },
+    {
+      "alert_cause": "Device offline",
+      "count": 77
+    }
+  ],
   "recent_incidents": [
     {
       "incident_id": "INC-000885",
@@ -101,6 +145,7 @@
       "end_time": "2026-03-14 09:07:34.783495+00:00",
       "duration_minutes": 0.0,
       "root_cause_candidate": "High traffic",
+      "incident_cause": "Port failure",
       "incident_type": "other"
     },
     {
@@ -113,6 +158,7 @@
       "end_time": "2026-03-14 09:07:34.781485+00:00",
       "duration_minutes": 0.0,
       "root_cause_candidate": "VPN connectivity changed",
+      "incident_cause": "Port failure",
       "incident_type": "other"
     },
     {
@@ -125,6 +171,7 @@
       "end_time": "2026-03-14 09:07:34.778467+00:00",
       "duration_minutes": 0.0,
       "root_cause_candidate": "High traffic",
+      "incident_cause": "Device offline",
       "incident_type": "availability"
     },
     {
@@ -137,6 +184,7 @@
       "end_time": "2026-03-14 09:07:34.775463+00:00",
       "duration_minutes": 0.0,
       "root_cause_candidate": "High traffic",
+      "incident_cause": "Port failure",
       "incident_type": "other"
     },
     {
@@ -149,6 +197,7 @@
       "end_time": "2026-03-14 09:07:34.771470+00:00",
       "duration_minutes": 0.0,
       "root_cause_candidate": "High traffic",
+      "incident_cause": "VPN connectivity changed",
       "incident_type": "other"
     }
   ],

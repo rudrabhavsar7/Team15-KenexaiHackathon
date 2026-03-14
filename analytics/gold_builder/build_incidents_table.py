@@ -13,6 +13,7 @@ INCIDENT_COLUMNS = [
     "end_time",
     "duration_minutes",
     "root_cause_candidate",
+    "incident_cause",
     "incident_type",
 ]
 

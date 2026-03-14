@@ -12,8 +12,33 @@ def create_incident_summary(
     device_metrics_df: pd.DataFrame,
     alert_stats_df: pd.DataFrame,
     incident_timeline_df: pd.DataFrame,
+    alerts_df: pd.DataFrame | None = None,
     top_n: int = 5,
 ) -> dict:
+    top_incident_causes = []
+    if not incidents_df.empty and "incident_cause" in incidents_df.columns:
+        top_incident_causes = (
+            incidents_df["incident_cause"]
+            .astype(str)
+            .value_counts()
+            .head(top_n)
+            .rename_axis("incident_cause")
+            .reset_index(name="count")
+            .to_dict(orient="records")
+        )
+
+    top_alert_causes = []
+    if alerts_df is not None and not alerts_df.empty and "cause" in alerts_df.columns:
+        top_alert_causes = (
+            alerts_df["cause"]
+            .astype(str)
+            .value_counts()
+            .head(top_n)
+            .rename_axis("alert_cause")
+            .reset_index(name="count")
+            .to_dict(orient="records")
+        )
+
     summary = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "overview": {
@@ -29,6 +54,8 @@ def create_incident_summary(
         .head(top_n)
         .to_dict(orient="records"),
         "most_frequent_alert_types": alert_stats_df.head(top_n).to_dict(orient="records"),
+        "top_incident_causes": top_incident_causes,
+        "top_alert_causes": top_alert_causes,
         "recent_incidents": incidents_df.sort_values("start_time", ascending=False).head(top_n).to_dict(orient="records"),
         "timeline_snapshot": incident_timeline_df.tail(top_n).to_dict(orient="records"),
     }

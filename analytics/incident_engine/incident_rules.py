@@ -30,6 +30,12 @@ def normalize_alerts(alerts_df: pd.DataFrame) -> pd.DataFrame:
         raise ValueError(f"Missing required columns: {missing}")
 
     normalized = alerts_df[REQUIRED_COLUMNS].copy()
+    if "cause" in alerts_df.columns:
+        normalized["cause"] = alerts_df["cause"]
+    else:
+        normalized["cause"] = alerts_df.get("description", "unknown")
+
+    normalized["cause"] = normalized["cause"].fillna(normalized["description"]).astype(str)
     normalized["timestamp"] = pd.to_datetime(normalized["timestamp"], errors="coerce", utc=True)
     normalized = normalized.dropna(subset=["timestamp", "device", "organization"])  # type: ignore[arg-type]
     normalized["severity"] = normalized["severity"].astype(str).str.lower().str.strip()
@@ -77,6 +83,7 @@ def detect_incident_groups(alerts_df: pd.DataFrame, window: str = "5min") -> tup
             start_time=("timestamp", "min"),
             end_time=("timestamp", "max"),
             root_cause_candidate=("alert_type", _mode_or_unknown),
+            incident_cause=("cause", _mode_or_unknown),
             representative_description=("description", _mode_or_unknown),
         )
         .sort_values(["start_time", "organization", "device"])

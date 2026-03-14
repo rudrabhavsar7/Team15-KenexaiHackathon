@@ -35,6 +35,7 @@ CANONICAL_ALERT_COLUMNS = [
     "severity",
     "status",
     "description",
+    "cause",
 ]
 
 
@@ -61,6 +62,23 @@ def _normalize_silver_schema(alerts_df: pd.DataFrame) -> pd.DataFrame:
     }
     normalized = normalized.rename(columns=rename_map)
 
+    cause_candidates = [
+        "cause",
+        "root_cause",
+        "root_cause_candidate",
+        "probable_cause",
+        "failure_cause",
+        "reason",
+    ]
+    if "cause" not in normalized.columns:
+        selected_cause_column = next((column for column in cause_candidates if column in normalized.columns), None)
+        if selected_cause_column is not None:
+            normalized["cause"] = normalized[selected_cause_column]
+        elif "description" in normalized.columns:
+            normalized["cause"] = normalized["description"]
+        else:
+            normalized["cause"] = "unknown"
+
     if "entity_type" not in normalized.columns:
         if "alert_category" in normalized.columns:
             normalized["entity_type"] = normalized["alert_category"]
@@ -74,6 +92,8 @@ def _normalize_silver_schema(alerts_df: pd.DataFrame) -> pd.DataFrame:
 
     if "source" not in normalized.columns:
         normalized["source"] = "unknown"
+
+    normalized["cause"] = normalized["cause"].fillna(normalized.get("description", "unknown")).astype(str)
 
     missing = [column for column in CANONICAL_ALERT_COLUMNS if column not in normalized.columns]
     if missing:
@@ -178,6 +198,7 @@ def run_pipeline(
         device_metrics_df=device_metrics_gold,
         alert_stats_df=alert_stats_gold,
         incident_timeline_df=timeline_gold,
+        alerts_df=alerts_clustered,
     )
 
     save_gold_outputs(
