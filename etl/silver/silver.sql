@@ -20,3 +20,4 @@ CREATE TABLE IF NOT EXISTS silver.alerts (
 
     ingestion_time TIMESTAMP
 );
+
