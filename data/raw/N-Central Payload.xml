@@ -1,7 +1,5 @@
-
-- N-Central Payloads -------------------------------------------
-
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>1373707380</ActiveNotificationTriggerID>
   <CustomerName>Ocean Point Terminals (LTB)</CustomerName>
   <DeviceURI>10.108.6.90</DeviceURI>
@@ -17,12 +15,14 @@
   <QuantitativeNewState>Total disk size: 159.66 GB
 Disk space used: 149.38 GB
 Disk free space: 10.27 GB
-Disk Usage: 94.00 %</QuantitativeNewState>
+Disk Usage: 94.00 %
+</QuantitativeNewState>
   <ServiceOrganizationName>DYOPATH</ServiceOrganizationName>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=164&amp;deviceID=1054966362&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <CustomerName>Wyffels</CustomerName>
   <DeviceURI>10.0.4.6</DeviceURI>
   <DeviceName>AmesUtility</DeviceName>
@@ -39,7 +39,8 @@ Disk Usage: 94.00 %</QuantitativeNewState>
   <ActiveProfile>BASELINE - Server Agent - Notification</ActiveProfile>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>1183555028</ActiveNotificationTriggerID>
   <CustomerName>Wedgewood Pharmacy</CustomerName>
   <DeviceURI>192.168.1.85</DeviceURI>
@@ -60,7 +61,8 @@ Log Threads Waiting: 0</QuantitativeNewState>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=351&amp;deviceID=261580361&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <CustomerName>Wyffels</CustomerName>
   <DeviceURI>10.0.4.6</DeviceURI>
   <DeviceName>AmesUtility</DeviceName>
@@ -80,7 +82,8 @@ Log Threads Waiting: 0</QuantitativeNewState>
   <ActiveProfile>BASELINE - Server Connectivity - Notification</ActiveProfile>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>970858591</ActiveNotificationTriggerID>
   <CustomerName>Ocean Point Terminals (LTB)</CustomerName>
   <DeviceURI>10.108.1.1</DeviceURI>
@@ -109,7 +112,8 @@ Event Log Date Time: 2025-11-25 10:35:56</QuantitativeNewState>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=164&amp;deviceID=1025295518&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>1132835688</ActiveNotificationTriggerID>
   <CustomerName>Ocean Point Terminals (LTB)</CustomerName>
   <DeviceURI>10.108.1.1</DeviceURI>
@@ -138,7 +142,8 @@ Event Log Date Time: 2025-11-25 10:35:56</QuantitativeNewState>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=164&amp;deviceID=1025295518&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>1267833812</ActiveNotificationTriggerID>
   <CustomerName>Ocean Point Terminals (LTB)</CustomerName>
   <DeviceURI>10.108.6.37</DeviceURI>
@@ -176,7 +181,8 @@ Event Log Date Time: 2025-11-25 10:32:01</QuantitativeNewState>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=164&amp;deviceID=379991315&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>1137839997</ActiveNotificationTriggerID>
   <CustomerName>Ambient Enterprises &gt; Ambient Enterprises HCN (HAR)</CustomerName>
   <DeviceURI>10.10.6.6</DeviceURI>
@@ -214,7 +220,8 @@ CPU Usage for Process 5: 3.00 %</QuantitativeNewState>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=262&amp;deviceID=1207384547&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>1266818120</ActiveNotificationTriggerID>
   <CustomerName>Wyffels</CustomerName>
   <DeviceURI>10.0.1.24</DeviceURI>
@@ -252,7 +259,8 @@ CPU Usage for Process 5: 4.00 %</QuantitativeNewState>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=250&amp;deviceID=1009532925&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <CustomerName>Ambient Enterprises &gt; Ambient Enterprises HCN (HAR)</CustomerName>
   <DeviceURI>10.10.6.6</DeviceURI>
   <DeviceName>GlacierVmProd2</DeviceName>
@@ -289,7 +297,8 @@ CPU Usage for Process 5: 4.00 %</QuantitativeNewState>
   <ActiveProfile>BASELINE - Server CPU - Notification</ActiveProfile>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <CustomerName>Signorelli Company</CustomerName>
   <DeviceURI>10.5.6.6</DeviceURI>
   <DeviceName>005-IGEL-UMS01</DeviceName>
@@ -338,7 +347,8 @@ CPU Usage for Process 5: 4.00 %</QuantitativeNewState>
   <ActiveProfile>BASELINE - Server Memory - Notification</ActiveProfile>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>680442344</ActiveNotificationTriggerID>
   <CustomerName>Ocean Point Terminals (LTB)</CustomerName>
   <DeviceURI>10.108.1.58</DeviceURI>
@@ -377,7 +387,8 @@ Event Log Date Time: 2025-11-25 10:49:03</QuantitativeNewState>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=164&amp;deviceID=857267435&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>1227524333</ActiveNotificationTriggerID>
   <CustomerName>Wyffels</CustomerName>
   <DeviceURI>10.0.1.24</DeviceURI>
@@ -415,7 +426,8 @@ CPU Usage for Process 5: 3.00 %</QuantitativeNewState>
   <RemoteControlLink>https://ncod524.n-able.com:443/deepLinkAction.do?method=deviceRC&amp;customerID=250&amp;deviceID=1009532925&amp;language=en_US</RemoteControlLink>
 </notification>
 
-<?xml version="1.0" encoding="UTF-8"?><notification>
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
   <ActiveNotificationTriggerID>1058771511</ActiveNotificationTriggerID>
   <CustomerName>Ocean Point Terminals (LTB)</CustomerName>
   <DeviceURI>10.108.1.1</DeviceURI>
