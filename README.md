@@ -1,5 +1,12 @@
 # Incident Intelligence Copilot
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Engineering-150458?logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white)
+![Qdrant](https://img.shields.io/badge/Qdrant-Vector%20DB-DC244C)
+![Groq](https://img.shields.io/badge/Groq-LLM%20Inference-000000)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit&logoColor=white)
+
 End-to-end Incident Intelligence Platform for ingesting noisy infrastructure alerts, building correlated incident intelligence, and enabling faster investigations through a GenAI Copilot and dashboard.
 
 ---
