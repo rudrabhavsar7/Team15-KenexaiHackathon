@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-14T13:50:07.878685+00:00",
+  "generated_at": "2026-03-15T02:22:48.622762+00:00",
   "overview": {
     "total_incidents": 885,
     "total_devices": 108,
@@ -112,26 +112,120 @@
       "count": 33
     }
   ],
-  "top_alert_causes": [
+  "top_incident_descriptions": [
     {
-      "alert_cause": "Port failure",
-      "count": 100
+      "incident_description": "The VPN remote gateway 12.207.114.35 has been lost\r\n\r\nBegin Crisis Management\r\nWarm Hand-off to IS - Networking team",
+      "count": 49
     },
     {
-      "alert_cause": "High latency",
+      "incident_description": "Device Online Status is now equal to Online",
+      "count": 45
+    },
+    {
+      "incident_description": "The VPN remote gateway 12.207.114.41 has been lost\r\n\r\nBegin Crisis Management\r\nWarm Hand-off to IS - Networking team",
+      "count": 43
+    },
+    {
+      "incident_description": "Port failure",
+      "count": 35
+    },
+    {
+      "incident_description": "High latency",
+      "count": 33
+    }
+  ],
+  "top_alert_contexts": [
+    {
+      "alert_type": "Port failure",
+      "description": "Port failure",
+      "cause": "Port failure",
+      "count": 96
+    },
+    {
+      "alert_type": "High latency",
+      "description": "High latency",
+      "cause": "High latency",
       "count": 91
     },
     {
-      "alert_cause": "High traffic",
+      "alert_type": "High traffic",
+      "description": "High traffic",
+      "cause": "High traffic",
       "count": 88
     },
     {
-      "alert_cause": "VPN connectivity changed",
-      "count": 84
+      "alert_type": "VPN connectivity changed",
+      "description": "VPN connectivity changed",
+      "cause": "VPN connectivity changed",
+      "count": 82
     },
     {
-      "alert_cause": "Device offline",
-      "count": 77
+      "alert_type": "Device offline",
+      "description": "Device offline",
+      "cause": "Device offline",
+      "count": 76
+    }
+  ],
+  "recent_alerts_with_context": [
+    {
+      "alert_id": "661107301075",
+      "timestamp": "2026-03-14 09:07:34.783495+00:00",
+      "source": "Meraki",
+      "organization": "Haynes, Butler and Rich",
+      "device": "srv-88.hanson.com",
+      "alert_type": "High traffic",
+      "severity": "critical",
+      "description": "Port failure",
+      "cause": "Port failure",
+      "incident_id": "INC-000885"
+    },
+    {
+      "alert_id": "242094996743",
+      "timestamp": "2026-03-14 09:07:34.781485+00:00",
+      "source": "Meraki",
+      "organization": "Maldonado, Wilson and Nichols",
+      "device": "email-76.rivera-espinoza.com",
+      "alert_type": "VPN connectivity changed",
+      "severity": "warning",
+      "description": "Port failure",
+      "cause": "Port failure",
+      "incident_id": "INC-000884"
+    },
+    {
+      "alert_id": "622316969339",
+      "timestamp": "2026-03-14 09:07:34.778467+00:00",
+      "source": "Meraki",
+      "organization": "Heath, Rivera and Guzman",
+      "device": "srv-75.roberson.com",
+      "alert_type": "High traffic",
+      "severity": "critical",
+      "description": "Device offline",
+      "cause": "Device offline",
+      "incident_id": "INC-000883"
+    },
+    {
+      "alert_id": "361395362692",
+      "timestamp": "2026-03-14 09:07:34.775463+00:00",
+      "source": "Meraki",
+      "organization": "Tran, Hall and West",
+      "device": "lt-48.johnson.com",
+      "alert_type": "High traffic",
+      "severity": "critical",
+      "description": "Port failure",
+      "cause": "Port failure",
+      "incident_id": "INC-000882"
+    },
+    {
+      "alert_id": "820105379965",
+      "timestamp": "2026-03-14 09:07:34.771470+00:00",
+      "source": "Meraki",
+      "organization": "Wells, Sanchez and Shepherd",
+      "device": "laptop-64.hickman.com",
+      "alert_type": "High traffic",
+      "severity": "warning",
+      "description": "VPN connectivity changed",
+      "cause": "VPN connectivity changed",
+      "incident_id": "INC-000881"
     }
   ],
   "recent_incidents": [
@@ -146,6 +240,7 @@
       "duration_minutes": 0.0,
       "root_cause_candidate": "High traffic",
       "incident_cause": "Port failure",
+      "description": "Port failure",
       "incident_type": "other"
     },
     {
@@ -159,6 +254,7 @@
       "duration_minutes": 0.0,
       "root_cause_candidate": "VPN connectivity changed",
       "incident_cause": "Port failure",
+      "description": "Port failure",
       "incident_type": "other"
     },
     {
@@ -172,6 +268,7 @@
       "duration_minutes": 0.0,
       "root_cause_candidate": "High traffic",
       "incident_cause": "Device offline",
+      "description": "Device offline",
       "incident_type": "availability"
     },
     {
@@ -185,6 +282,7 @@
       "duration_minutes": 0.0,
       "root_cause_candidate": "High traffic",
       "incident_cause": "Port failure",
+      "description": "Port failure",
       "incident_type": "other"
     },
     {
@@ -198,6 +296,7 @@
       "duration_minutes": 0.0,
       "root_cause_candidate": "High traffic",
       "incident_cause": "VPN connectivity changed",
+      "description": "VPN connectivity changed",
       "incident_type": "other"
     }
   ],

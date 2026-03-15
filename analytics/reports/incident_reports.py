@@ -27,17 +27,49 @@ def create_incident_summary(
             .to_dict(orient="records")
         )
 
-    top_alert_causes = []
-    if alerts_df is not None and not alerts_df.empty and "cause" in alerts_df.columns:
-        top_alert_causes = (
-            alerts_df["cause"]
+    top_incident_descriptions = []
+    if not incidents_df.empty and "description" in incidents_df.columns:
+        top_incident_descriptions = (
+            incidents_df["description"]
             .astype(str)
             .value_counts()
             .head(top_n)
-            .rename_axis("alert_cause")
+            .rename_axis("incident_description")
             .reset_index(name="count")
             .to_dict(orient="records")
         )
+
+    top_alert_contexts = []
+    recent_alerts_with_context = []
+    if alerts_df is not None and not alerts_df.empty:
+        context_columns = ["alert_type", "description", "cause"]
+        if all(column in alerts_df.columns for column in context_columns):
+            top_alert_contexts = (
+                alerts_df.groupby(context_columns, dropna=False)
+                .size()
+                .reset_index(name="count")
+                .sort_values("count", ascending=False)
+                .head(top_n)
+                .to_dict(orient="records")
+            )
+
+        candidate_recent_columns = [
+            "alert_id",
+            "timestamp",
+            "source",
+            "organization",
+            "device",
+            "alert_type",
+            "severity",
+            "description",
+            "cause",
+            "incident_id",
+        ]
+        recent_columns = [column for column in candidate_recent_columns if column in alerts_df.columns]
+        if recent_columns:
+            recent_alerts_with_context = (
+                alerts_df.sort_values("timestamp", ascending=False).head(top_n)[recent_columns].to_dict(orient="records")
+            )
 
     summary = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -55,7 +87,9 @@ def create_incident_summary(
         .to_dict(orient="records"),
         "most_frequent_alert_types": alert_stats_df.head(top_n).to_dict(orient="records"),
         "top_incident_causes": top_incident_causes,
-        "top_alert_causes": top_alert_causes,
+        "top_incident_descriptions": top_incident_descriptions,
+        "top_alert_contexts": top_alert_contexts,
+        "recent_alerts_with_context": recent_alerts_with_context,
         "recent_incidents": incidents_df.sort_values("start_time", ascending=False).head(top_n).to_dict(orient="records"),
         "timeline_snapshot": incident_timeline_df.tail(top_n).to_dict(orient="records"),
     }

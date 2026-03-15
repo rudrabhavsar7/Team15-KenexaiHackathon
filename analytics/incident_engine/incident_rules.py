@@ -107,5 +107,6 @@ def detect_incident_groups(alerts_df: pd.DataFrame, window: str = "5min") -> tup
         how="left",
     )
 
-    incidents = grouped.drop(columns=["time_window", "representative_description"])
+    grouped = grouped.rename(columns={"representative_description": "description"})
+    incidents = grouped.drop(columns=["time_window"])
     return incidents, mapping

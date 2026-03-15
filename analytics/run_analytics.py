@@ -41,6 +41,8 @@ CANONICAL_ALERT_COLUMNS = [
 
 def _resolve_default_silver_path() -> str:
     candidates = [
+        Path("data/parquet_exports/alerts_clean.parquet"),
+        Path("data/parquet_exports/alert_clen.parquet"),
         Path("silver/alerts_clean.parquet"),
         Path("data/alerts_clean.csv"),
     ]

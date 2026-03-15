@@ -14,6 +14,7 @@ INCIDENT_COLUMNS = [
     "duration_minutes",
     "root_cause_candidate",
     "incident_cause",
+    "description",
     "incident_type",
 ]
 
