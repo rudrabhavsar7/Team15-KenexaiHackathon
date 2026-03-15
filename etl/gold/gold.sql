@@ -1,66 +1,102 @@
 -- Active: 1773470111546@@127.0.0.1@5432@kenexaihackathon
 CREATE SCHEMA IF NOT EXISTS gold;
 
-CREATE TABLE gold.dim_devices (
-    device_id SERIAL PRIMARY KEY,
-    device_name VARCHAR(150) UNIQUE,
-    source_system VARCHAR(50)
+CREATE TABLE gold.dim_device (
+
+    device_key SERIAL PRIMARY KEY,
+
+    device_name TEXT,
+
+    device_identifier TEXT,
+
+    source_system TEXT
 );
 
-CREATE TABLE gold.dim_severity (
-    severity_id SERIAL PRIMARY KEY,
-    severity VARCHAR(50),
-    severity_score INT
+CREATE TABLE gold.dim_organization (
+
+    organization_key SERIAL PRIMARY KEY,
+
+    organization_name TEXT
 );
 
-CREATE TABLE gold.dim_alert_types (
-    alert_type_id SERIAL PRIMARY KEY,
-    alert_type VARCHAR(150),
-    alert_category VARCHAR(100)
+CREATE TABLE gold.dim_alert_type (
+
+    alert_type_key SERIAL PRIMARY KEY,
+
+    alert_type TEXT,
+
+    service_name TEXT
 );
 
 CREATE TABLE gold.dim_time (
-    time_id SERIAL PRIMARY KEY,
-    occurred_at TIMESTAMP,
-    alert_hour INT,
-    alert_day DATE
+
+    time_key SERIAL PRIMARY KEY,
+
+    event_time TIMESTAMP,
+
+    event_date DATE,
+
+    hour INTEGER,
+
+    day INTEGER,
+
+    month INTEGER,
+
+    year INTEGER
 );
 
-CREATE TABLE gold.fact_alerts (
+CREATE TABLE gold.fact_incidents (
 
-    alert_id TEXT PRIMARY KEY,
+    incident_key BIGSERIAL PRIMARY KEY,
 
-    device_id INT,
-    severity_id INT,
-    alert_type_id INT,
-    time_id INT,
+    correlation_id TEXT,
 
-    source_system VARCHAR(50),
+    device_key INTEGER REFERENCES gold.dim_device(device_key),
 
-    FOREIGN KEY (device_id) REFERENCES gold.dim_devices(device_id),
-    FOREIGN KEY (severity_id) REFERENCES gold.dim_severity(severity_id),
-    FOREIGN KEY (alert_type_id) REFERENCES gold.dim_alert_types(alert_type_id),
-    FOREIGN KEY (time_id) REFERENCES gold.dim_time(time_id)
+    organization_key INTEGER REFERENCES gold.dim_organization(organization_key),
+
+    alert_type_key INTEGER REFERENCES gold.dim_alert_type(alert_type_key),
+
+    start_time_key INTEGER REFERENCES gold.dim_time(time_key),
+
+    end_time_key INTEGER REFERENCES gold.dim_time(time_key),
+
+    incident_duration INTERVAL,
+
+    alert_count INTEGER,
+
+    severity TEXT,
+
+    synthetic BOOLEAN
 );
 
-CREATE TABLE gold.device_alert_summary AS
+CREATE TABLE gold.incident_tickets (
 
-SELECT
-device_name,
-COUNT(*) AS total_alerts,
-SUM(CASE WHEN severity='Critical' THEN 1 ELSE 0 END) AS critical_alerts,
-SUM(CASE WHEN severity='Warning' THEN 1 ELSE 0 END) AS warning_alerts
+ticket_id SERIAL PRIMARY KEY,
 
-FROM silver.alerts
+incident_id INTEGER,
 
-GROUP BY device_name;
+device_name TEXT,
 
-CREATE TABLE gold.incidents (
-    incident_id SERIAL PRIMARY KEY,
-    device_name VARCHAR(150),
-    incident_type VARCHAR(150),
-    severity VARCHAR(50),
-    start_time TIMESTAMP,
-    end_time TIMESTAMP,
-    alert_count INT
-); 
+issue TEXT,
+
+status TEXT,
+
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+ALTER TABLE gold.dim_device
+ADD CONSTRAINT unique_device
+UNIQUE(device_name, device_identifier);
+
+ALTER TABLE gold.dim_organization
+ADD CONSTRAINT unique_organization
+UNIQUE(organization_name);
+
+ALTER TABLE gold.dim_alert_type
+ADD CONSTRAINT unique_alert_type
+UNIQUE(alert_type, service_name);
+
+ALTER TABLE gold.fact_incidents
+ADD COLUMN incident_status TEXT DEFAULT 'OPEN';

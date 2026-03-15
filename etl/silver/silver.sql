@@ -1,22 +1,61 @@
 -- Active: 1773470111546@@127.0.0.1@5432@kenexaihackathon
 CREATE SCHEMA IF NOT EXISTS silver;
-CREATE TABLE IF NOT EXISTS silver.alerts (
-    alert_id TEXT PRIMARY KEY,
 
-    source_system VARCHAR(50),
+CREATE TABLE silver.alerts (
 
-    device_name VARCHAR(150),
-    device_identifier TEXT,
+    id BIGSERIAL PRIMARY KEY,
+
+    source_system TEXT,           -- meraki / auvik / ncentral
+
+    alert_id TEXT,
+    correlation_id TEXT,
 
     organization_name TEXT,
-    network_name TEXT,
 
-    alert_type VARCHAR(150),
-    severity VARCHAR(50),
+    device_name TEXT,
+    device_identifier TEXT,
 
-    alert_message TEXT,
+    service_name TEXT,
 
-    occurred_at TIMESTAMP,
+    alert_type TEXT,
+
+    severity TEXT,
+
+    event_state TEXT,             -- triggered / resolved
+
+    event_time TIMESTAMP,
+
+    synthetic BOOLEAN,
+
+    ingestion_time TIMESTAMP
+);
+
+CREATE TABLE silver.alerts_clean (
+
+    id BIGSERIAL PRIMARY KEY,
+
+    source_system TEXT,
+
+    alert_id TEXT,
+
+    correlation_id TEXT,
+
+    organization_name TEXT,
+
+    device_name TEXT,
+    device_identifier TEXT,
+
+    service_name TEXT,
+
+    alert_type TEXT,
+
+    severity TEXT,
+
+    event_state TEXT,
+
+    event_time TIMESTAMP,
+
+    synthetic BOOLEAN,
 
     ingestion_time TIMESTAMP
 );
